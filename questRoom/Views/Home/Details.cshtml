@@ -1,0 +1,70 @@
+﻿@using questRoom.Models
+@model Room
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainDivDetails">
+    <div id="detailsDiv">
+        <div id="detailsFirst">
+            <div id="detailsPic">
+                <img src="~/Images/@Model.MainPicture" alt="Alternate Text" />
+            </div>
+            <div id="detailsText">
+                <h1>@Model.Title</h1>
+                <p>@Model.Description</p>
+            </div>
+        </div>
+        <div id="detailsSecond">
+            <div class="moreDetails">
+                <h3>GROUPE SIZE: </h3>
+                <p>@Model.MinPlayers-@Model.MaxPlayers</p>
+            </div>
+            <div class="moreDetails">
+                <h3>TIME LIMIT: </h3>
+                <p>@Model.Time</p>
+            </div>
+            <div class="moreDetails">
+                <h3>AGE: </h3>
+                <p>@Model.MinAge+</p>
+            </div>
+            <div class="moreDetails">
+                <h3>RATING: </h3>
+                <p>@Model.Rating / 5</p>
+            </div>
+            <div class="moreDetails">
+                <h3>DIFFICULTY: </h3>
+                <p>@Model.DifficultyLevel / 5</p>
+            </div>
+            <div class="moreDetails">
+                <h3>FEAR: </h3>
+                <p>@Model.FearLevel / 5</p>
+            </div>
+        </div>
+        <div id="galleryDetails">
+            @foreach (var item in Model.Gallery)
+            {
+                @*<div class="galleryItem">*@
+                <a href="~/Images/@item" class="lightzoom galleryItem"><img class="picGallery" src="~/Images/@item" alt="Alternate Text" /></a>
+                @*</div>*@
+            }
+        </div>
+        <div id="finishDetails">
+            <h3>Email: <span>@Model.Email</span></h3>
+            <div id="telDetails">
+                @foreach (var item in Model.Telephones)
+                {
+                    <div class="telephoneItem">
+                        <p class="telGallery">@item</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/lightzoom/lightzoom.js")
+    @Scripts.Render("~/Scripts/detailsScript.js")
+}
+

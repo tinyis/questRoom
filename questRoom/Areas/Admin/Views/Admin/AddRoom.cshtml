@@ -1,0 +1,66 @@
+﻿@model questRoom.Models.Room
+
+@{
+    ViewBag.Title = "AddRoom";
+}
+
+<h2>Create Room</h2>
+@using (Html.BeginForm("AddRoom", "Admin",
+FormMethod.Post,
+new { @class = "roomCssClass", data_formType = "room" }))
+{
+    <div class="item">
+        <label>RoomId: </label>
+        @Html.TextBoxFor(room => room.Id)
+    </div>
+    <div class="item">
+        <label>Title: </label>
+        @Html.TextBoxFor(room => room.Title)
+    </div>
+    <div class="item">
+        <label>Description: </label>
+        @Html.TextBoxFor(room => room.Description)
+    </div>
+    <div class="item">
+        <label>Time: </label>
+        @Html.TextBoxFor(room => room.Time)
+    </div>
+    <div class="item">
+        <label>Group size: </label>
+        @Html.TextBoxFor(room => room.MinPlayers) -
+        @Html.TextBoxFor(room => room.MaxPlayers)
+    </div>
+    <div class="item">
+        <label>Minimum age: </label>
+        @Html.TextBoxFor(room => room.MinAge)
+    </div>
+    <div class="item">
+        <label>Address: </label>
+        @Html.TextBoxFor(room => room.Address)
+    </div>
+    <div class="item">
+        <label>Email: </label>
+        @Html.TextBoxFor(room => room.Email)
+    </div>
+    <div class="item">
+        <label>Rating: </label>
+        @Html.TextBoxFor(room => room.Rating)
+    </div>
+    <div class="item">
+        <label>Fear: </label>
+        @Html.TextBoxFor(room => room.FearLevel)
+    </div>
+    <div class="item">
+        <label>Difficulty: </label>
+        @Html.TextBoxFor(room => room.DifficultyLevel)
+    </div>
+    <div class="item">
+        <label>Phones: </label>
+        @Html.TextBoxFor(room => room.Telephones)
+        <button id="addPhone">+</button>
+    </div>
+
+
+    <input type="submit" value="OK" />
+}
+

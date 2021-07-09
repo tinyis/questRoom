@@ -1,0 +1,99 @@
+﻿@using questRoom.ViewModels
+@using questRoom.Models
+@model AddRoomViewModel
+
+@{
+    ViewBag.Title = "AddRoomForm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div id="divCreateRoom">
+    <h2 id="titleCreateRoom">Create Room</h2>
+    @using (Html.BeginForm("AddRoom", "Admin", new { area = "Admin" },
+    FormMethod.Post, new { enctype = "multipart/form-data", id="formAdd" }))
+    {
+        <div class="oneLineAdd">
+            @Html.TextBoxFor(room => Model.room.Id, new { id = "RoomId" })
+        </div>
+        <div class="oneLineAdd">
+            <label class="labelAdd">Title: </label><br />
+            @Html.TextBoxFor(room => Model.room.Title, new { @class = "inputAdd" })
+        </div>
+        <div class="oneLineAdd">
+            <label class="labelAdd">Description: </label><br />
+            @Html.TextAreaFor(room => Model.room.Description, new { id = "textAreaAdd" })
+        </div>
+        <div id="moreAdd">
+            <div class="moreAddDetails">
+                <div class="detailsDiv">
+                    <div class="pictureLabel"><img src="~/Images/icons8-time-64.png" alt="Alternate Text" /><label class="labelAdd">Time: </label></div>
+                    <div>@Html.TextBoxFor(room => Model.room.Time, new { @class = "inputAdd", @Value = "" })</div>
+                </div>
+                <div class="detailsDiv">
+                        <div class="pictureLabel"><img src="~/Images/icons8-people-64.png" alt="Alternate Text" /><label class="labelAdd">Group size: </label></div>
+                        <div>
+                            @Html.TextBoxFor(room => Model.room.MinPlayers, new { @class = "inputAddLittle", @Value = "" }) -
+                            @Html.TextBoxFor(room => Model.room.MaxPlayers, new { @class = "inputAddLittle", @Value = "" })
+                        </div> 
+                    </div>
+                </div>
+            <div class="moreAddDetails">
+                <div class="detailsDiv">
+                    <div class="pictureLabel"><img src="~/Images/icons8-life-cycle-64.png" alt="Alternate Text" /><label class="labelAdd">Minimal Age: </label></div>
+                    <div>@Html.TextBoxFor(room => Model.room.MinAge, new { id = "inputAddAge", @Value = "" })</div>
+                </div>
+                <div class="detailsDiv">
+                    <div class="pictureLabel"><img src="~/Images/icons8-star-filled-64.png" alt="Alternate Text" /><label class="labelAdd">Rating: </label></div>
+                    <div>@Html.DropDownListFor(room => Model.room.Rating, new SelectList(new[] { "1", "2", "3", "4", "5" }), new { @class = "dropAdd" }) / 5</div>
+                </div>
+            </div>
+            <div class="moreAddDetails">
+                <div class="detailsDiv">
+                    <div class="pictureLabel"><img src="~/Images/icons8-scream-64.png" alt="Alternate Text" /><label class="labelAdd">Fear: </label></div>
+                    <div>@Html.DropDownListFor(room => Model.room.FearLevel, new SelectList(new[] { "1", "2", "3", "4", "5" }), new { @class = "dropAdd" }) / 5</div>
+                </div>
+                <div class="detailsDiv">
+                    <div class="pictureLabel"><img src="~/Images/icons8-house-of-cards-64.png" alt="Alternate Text" /><label class="labelAdd">Difficulty: </label></div>
+                    <div>@Html.DropDownListFor(room => Model.room.DifficultyLevel, new SelectList(new[] { "1", "2", "3", "4", "5" }), new { @class = "dropAdd" }) / 5</div> 
+                </div>
+            </div>      
+        </div>
+        <div class="moreAddDetailsContact">
+            <div class="contactDetails">
+                <div>
+                    <div class="pictureLabel"><img src="~/Images/icons8-address-64.png" alt="Alternate Text" /><label class="labelAdd">Address: </label></div>
+                        @Html.TextBoxFor(room => Model.room.Address, new { @class = "inputAdd" })
+                    </div>
+                </div>
+            <div class="contactDetails">
+                <div>
+                    <div class="pictureLabel"><img src="~/Images/icons8-email-64.png" alt="Alternate Text" /><label class="labelAdd">Email: </label></div>
+                        @Html.TextBoxFor(room => Model.room.Email, new { @class = "inputAdd" })
+                    </div>
+                </div>
+            <div class="contactDetails">
+                <div id="addTelephoneDiv">
+                    <div class="pictureLabel"><img src="~/Images/icons8-phone-64.png" alt="Alternate Text" /><label class="labelAdd">Phone number: </label></div>
+                    <div id="newTelephone">
+                        @Html.TextBoxFor(room => Model.room.Telephones, new { @Value = "", @class = "inputAddTelephone" })
+                        <button id="addPhone" type="button">&#10010;</button>
+                    </div>
+                    </div>
+                </div>     
+        </div>
+        <div id="logoAdd">
+            <label>Logo image: </label><br />
+            <input type="file" name="File", id="fileLogo" />
+        </div>
+        <div id="galleryAdd">
+            <div id="galleryAddLabel" class="pictureLabelGallery"><img src="~/Images/icons8-gallery-64.png" alt="Alternate Text" /><label class="labelAdd">Gallery: </label></div>
+            <div id="galleryAddPhoto">
+                <div id="galleryAddPhotoBtn"><input type="file" name="GalleryImageData" accept="image/*" class="galleryClass" /></div>
+            </div>
+        </div>
+            <input id="addBtn" type="submit" value="OK" />
+            }
+     </div>
+
+
+

@@ -1,0 +1,34 @@
+﻿@using questRoom.Models
+@model List<Room>
+@{
+    ViewBag.Title = "ShowEdit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    foreach (Room room in Model)
+    {
+        <div class="minRoom">
+            <div class="picDiv">
+                <img class="mainPic" src="~/Images/@room.MainPicture" alt="Alternate Text" />
+            </div>
+            <div class="titleDiv">
+                <h1>@room.Title</h1>
+            </div>
+            <div class="descriptionDiv">
+                <p>@room.Description</p>
+                @Html.ActionLink("Edit", "EditRoom", new { idRoom = room.Id }, new { id = "editOneRoom", @class = "changeNews" })
+                @Html.ActionLink("Delete", "DeleteRoom", new { idRoom = room.Id }, new { id = "deleteOneRoom", @class = "changeNews" })
+            </div>
+            <div class="moreDiv">
+                <div class="more"><h3>DIFFICULTY:</h3><p>@room.DifficultyLevel</p></div>
+                <div class="more"><h3>GROUP SIZE:</h3><p>@room.MinPlayers-@room.MaxPlayers</p></div>
+                <div class="more"><h3>TIME LIMIT:</h3><p>@room.Time mins.</p></div>
+            </div>
+        </div>
+    }
+}
+@section Scripts {
+        @Scripts.Render("~/Scripts/myScriptIndex.js")
+                }
+

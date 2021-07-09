@@ -1,0 +1,633 @@
+﻿/*https://color.romanuke.com/czvetovaya-palitra-%e2%84%964244*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Stick';
+}
+
+header {
+    border-bottom: 2px solid #0be7fb;
+    background-color: #1e0521;
+}
+
+body {
+    background-color: #1e0521;
+}
+
+nav {
+    color: white;
+    padding: 20px;
+}
+
+.titles {
+ 
+}
+
+.minRoom {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #0be7fb;
+}
+
+.picDiv {
+    width: 50%;
+    height: 50%;
+    padding: 5%;
+}
+
+.picDiv img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.titleDiv {
+    width: 50%;
+    height: 50%;
+    padding: 5%;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    text-align:center;
+}
+
+.titleDiv h1{
+    font-size: 30px;
+}
+
+.descriptionDiv {
+    width: 50%;
+    height: 50%;
+    padding: 5%;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    position: relative;
+}
+
+.descriptionDiv p {
+    -webkit-line-clamp: 5; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden;
+}
+
+.moreDiv {
+    width: 50%;
+    height: 50%;
+    padding: 5%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    font-size:20px;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+#mainDiv, #mainDivDetails {
+    display: flex;
+    flex-wrap: wrap;
+    min-width:860px;
+}
+
+#mainDivDetails {
+    background-image: url("../Images/escape-room-2019-sci-fi-movies.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-content:center;
+}
+
+.linkRoom{
+    text-decoration:none;
+    display:block;
+}
+
+.linkDetails {
+    text-decoration: none;
+    padding: 10px;
+    background-color: #0be7fb;
+    text-align: center;
+    color: #010b8b;
+    border-radius:5px;
+    position:absolute;
+    bottom:5%;
+    right:5%;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+}
+
+#editOneRoom {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #0be7fb;
+    text-align: center;
+    color: #010b8b;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    margin-right: 80px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#deleteOneRoom {
+    text-decoration: none;
+    padding: 10px;
+    background-color: #0be7fb;
+    text-align: center;
+    color: #010b8b;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.linkDetails:hover, #editOneRoom:hover, #deleteOneRoom:hover {
+    background-color: #38939c;
+}
+
+header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+}
+
+.titles {
+    text-decoration: none;
+    color: #fecc50;
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+.titles:hover {
+    color: #0be7fb;
+}
+
+#detailsDiv {
+/*    margin: auto;*/
+    width: 80%;
+    background-color: rgba(64, 74, 82, 0.5);
+    /*box-shadow: 0 0 10px rgba(64, 74, 82, 0.5);*/ /* Параметры тени */
+    padding: 5%;
+}
+
+#detailsFirst{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    justify-items:center;
+}
+
+#detailsPic{
+    width:30%;
+    height:100%;
+    min-width:270px;
+}
+
+#detailsPic img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#detailsText{
+    width:65%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+
+#detailsText h1{
+    text-align:center;
+    color: red;
+    font-size: 35px;
+    margin-bottom:30px;
+}
+
+#detailsText p {
+    font-size: 20px;
+}
+
+#detailsSecond{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:30px;
+}
+
+.moreDetails {
+    width: 16%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.moreDetails h3{
+    color: yellow;
+    font-weight:bold;
+    font-size:20px;
+}
+
+    .moreDetails p {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+#galleryDetails {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.galleryItem {
+    width: 30%;
+/*    position: relative;*/
+    overflow: hidden;
+    display:block;
+    margin-bottom:15px;
+}
+
+.galleryItem img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items:stretch;
+    overflow:hidden;
+}
+
+#logoDiv {
+    width: 30%;
+    overflow: hidden;
+    display: block;
+    min-width: 270px;
+    position:relative;
+}
+
+#deleteLogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 109, 105, 0.5);
+    padding:3px;
+    display:flex;
+    justify-content:flex-end;
+    display:none;
+}
+
+.galleryDiv:hover .deleteGalleryPic {
+    display: flex;
+}
+
+#logoDiv:hover #deleteLogo{
+    display:flex;
+}
+
+#crossLogo{
+    cursor:pointer;
+}
+
+#logoDiv img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.galleryDiv {
+    width: 30%;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.deleteGalleryPic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 109, 105, 0.5);
+    padding: 3px;
+    display: flex;
+    justify-content: flex-end;
+    display: none;
+}
+
+.galleryDiv img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+/*.galleryItem:hover:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255, 0.5);
+}
+*/
+
+#finishDetails {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#finishDetails h3 {
+    color: white;
+}
+
+#finishDetails h3 span {
+    color: #0be7fb;
+}
+
+.telephoneItem {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.telGallery {
+    color: #ff6d69;
+}
+
+a{
+    text-decoration:none;
+}
+
+#RoomId{
+    display:none;
+}
+
+#divCreateRoom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 70%;
+    padding: 15px;
+    color: #fecc50;
+}
+
+#titleCreateRoom {
+    margin-top: 30px;
+    color:#ff6d69;
+    font-size:30px;
+    margin-bottom:20px;
+    margin:auto;
+  
+}
+
+.oneLineAdd{
+    width:100%;
+    margin-bottom:15px;
+}
+
+#moreAdd {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.moreAddDetails {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.inputAddLittle {
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid #fecc50;
+    border-radius: 5px;
+    text-align:center;
+}
+
+#formAdd{
+    width:100%;
+}
+
+.moreAddDetailsContact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#logoAdd, #galleryAdd {
+    margin-bottom: 15px;
+}
+
+.detailsDiv {
+    margin-bottom:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+label {
+    color: #0be7fb;
+    font-size:25px;
+    font-weight:bold;
+    margin-left:5px;
+}
+
+.inputAdd {
+    height: 30px;
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #fecc50;
+    border-radius:5px;
+    padding:10px;
+}
+
+.inputAddTelephone {
+    height: 30px;
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #fecc50;
+    border-radius: 5px;
+    width: 90%;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+#addPhone {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #53fe50;
+    border: 1px solid #135c11;
+    color: #135c11;
+    cursor: pointer;
+}
+
+    #addPhone:hover {
+        background-color: #07bf04;
+    }
+
+#textAreaAdd {
+    height: 150px;
+    width: 100%;
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #fecc50;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.dropAdd {
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid #fecc50;
+    border-radius: 5px;
+}
+
+#inputAddAge {
+    width: 100%;
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #fecc50;
+    border-radius: 5px;
+    height: 30px;
+    padding: 10px;
+}
+
+#addBtn {
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    background-color: #53fe50;
+    border: 1px solid #135c11;
+    border-radius:5px;
+    font-weight:bold;
+    font-size:20px;
+    color: #135c11;
+    cursor: pointer;
+}
+
+#galleryAddLabel {
+    border: 2px solid #fecc50;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+
+#galleryAddPhoto {
+    border-right: 2px solid #fecc50;
+    border-left: 2px solid #fecc50;
+    border-bottom: 2px solid #fecc50;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ff6d69;
+    padding: 10px;
+}
+
+#gallleryAddPhoto{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+}
+
+#galleryRoom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:stretch;
+}
+
+.pictureLabel img {
+    width: 45px;
+    height: 45px;
+    display: block;
+}
+
+.pictureLabel{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin:5px !important;
+}
+
+.pictureLabelGallery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+.contactDetails{
+
+    width:60%;
+}
+
+#newTelephone{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}

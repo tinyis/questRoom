@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - приложение ASP.NET</title>
+    <link href=@Url.Content("~/Content/Site.css") rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lightzoom/style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="cub">
+            <img src="@Url.Content("~/Images/icons8-room-64.png")" alt="Alternate Text" />
+        </div>
+        <nav>
+            @Html.ActionLink("Main", "Index", "Home", new { area = "" }, new { id = "", @class = "titles" })
+            @Html.ActionLink("Admin Panel", "ShowEdit", "Admin", new { area = "Admin" }, new { id = "", @class = "titles" })
+            @Html.ActionLink("Contacts", "Contacts", "Home", new { area = "" }, new { id = "", @class = "titles" })
+        </nav>
+    </header>
+    <div id="mainDiv">
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", required: false)
+    @*<script src="~/lightzoom/lightzoom.js"></script>
+    <script src="~/Scripts/myScriptIndex.js"></script>*@
+</body>
+</html>
+
